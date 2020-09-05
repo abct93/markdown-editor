@@ -1,4 +1,5 @@
 const path = require('path')
+const WebpackAssetsManifest = require('webpack-assets-manifest')
 
 module.exports = {
     entry: './src/index.tsx',
@@ -12,7 +13,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js','.ts', '.tsx'],
+        extensions: ['.js', '.ts', '.tsx'],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -22,5 +23,10 @@ module.exports = {
     devServer: {
         hot: true, // hotreload
         open: true // launch Browser
-    }
+    },
+    plugins: [
+        new WebpackAssetsManifest({
+            output: "asset-manifest.json"
+        }),
+    ],
 }

@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
-    background: dodgerblue;
+    background: #1e4cff;
     border: none;
     box-shadow: none;
     color: white;
