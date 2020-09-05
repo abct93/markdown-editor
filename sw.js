@@ -1,10 +1,10 @@
 const CacheName = 'Cache:v2';
 
 self.addEventListener('install', (event) => {
-    event.waitUntil(self.skipWaiting());
+    console.log(event);
 });
 self.addEventListener('activate', (event) => {
-    event.waitUntil(self.ClientRectList.claim());
+    console.log(event);
 });
 
 const networkFallingBackToCache = async (request) => {
