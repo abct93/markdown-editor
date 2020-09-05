@@ -7,6 +7,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./image/icon/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./image/icon/icon_16x16.png">
     <link rel="manifest" href="./manifest.json">
+    <script>
+        dataLayer = [];
+    </script>
     <!-- Google Tag Manager -->
     <script>
         (function (w, d, s, l, i) {
@@ -36,9 +39,9 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js').then((registration) => {
-                    console.log('ServiceWorker registration successful with scope:', registration.scope);
+                    dataLayer.push({ 'serviceWorkerRegistration': 'successful' });
                 }, (err) => {
-                    console.log('ServiceWorker registration failed:', err);
+                    dataLayer.push({ 'serviceWorkerRegistration': 'failed' });
                 })
             })
         }
