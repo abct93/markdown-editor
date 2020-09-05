@@ -24,9 +24,4 @@ module.exports = {
         hot: true, // hotreload
         open: true // launch Browser
     },
-    plugins: [
-        new WebpackAssetsManifest({
-            output: "asset-manifest.json"
-        }),
-    ],
 }
